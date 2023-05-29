@@ -11,7 +11,12 @@ import java.util.List;
 public class StudentServiceImpl implements StudentService {
 
     private StudentRepository studentRepository;
-    private Student student;
+
+    public StudentServiceImpl(StudentRepository studentRepository) {
+        super();
+        this.studentRepository = studentRepository;
+    }
+
     @Override
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
