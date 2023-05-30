@@ -17,15 +17,20 @@ public class StudentManagementSystemApplication implements CommandLineRunner {
 
     @Autowired
     private StudentRepository studentRepository;
+
     @Override
     public void run(String... args) throws Exception {
 
-        Student student1 = new Student();
-        student1.setFirstName("Alex");
-        student1.setLastName("Brack");
-        student1.setEmail("a.brack@live.co.uk");
+         Student student1 = new Student("Alex", "Brackenridge", "a.brack@live.co.uk");
+         studentRepository.save(student1);
 
-        studentRepository.save(student1);
+         Student student2 = new Student("Jeff", "Bezos", "jeff@amazon.com");
+         studentRepository.save(student2);
+
+         Student student3 = new Student("Elon", "Musk", "e.musk@tesla.com");
+         studentRepository.save(student3);
+
 
     }
+
 }
