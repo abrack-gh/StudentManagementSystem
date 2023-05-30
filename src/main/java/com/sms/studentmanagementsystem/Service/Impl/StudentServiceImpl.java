@@ -4,6 +4,7 @@ import com.sms.studentmanagementsystem.Entity.Student;
 import com.sms.studentmanagementsystem.Repository.StudentRepository;
 import com.sms.studentmanagementsystem.Service.StudentService;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 
@@ -20,6 +21,13 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
+    }
+
+    @Override
+    public Student saveStudent(@ModelAttribute("student") Student student) {
+
+        return studentRepository.save(student);
+
     }
 
 }
