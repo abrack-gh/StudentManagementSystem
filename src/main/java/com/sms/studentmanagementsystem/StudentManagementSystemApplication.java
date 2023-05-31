@@ -1,7 +1,9 @@
 package com.sms.studentmanagementsystem;
 
 import com.sms.studentmanagementsystem.Entity.Student;
+import com.sms.studentmanagementsystem.Entity.Teacher;
 import com.sms.studentmanagementsystem.Repository.StudentRepository;
+import com.sms.studentmanagementsystem.Repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,6 +20,9 @@ public class StudentManagementSystemApplication implements CommandLineRunner {
     @Autowired
     private StudentRepository studentRepository;
 
+    @Autowired
+    private TeacherRepository teacherRepository;
+
     @Override
     public void run(String... args) throws Exception {
 
@@ -29,6 +34,9 @@ public class StudentManagementSystemApplication implements CommandLineRunner {
 
          Student student3 = new Student("Elon", "Musk", "e.musk@tesla.com");
          studentRepository.save(student3);
+
+        Teacher teacher1 = new Teacher("Alex", "Brackenridge", "a.brack@live.co.uk", "ICT");
+        teacherRepository.save(teacher1);
 
 
     }

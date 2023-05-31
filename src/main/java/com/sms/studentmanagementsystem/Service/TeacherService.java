@@ -10,4 +10,12 @@ public interface TeacherService {
 
     List<Teacher> getAllTeachers();
 
+    Teacher saveTeacher(Teacher teacher);
+
+    Teacher getTeacherById(Long id);
+
+    Teacher editTeacher(Teacher teacher);
+
+    void deleteTeacher(Long id);
+
 }
